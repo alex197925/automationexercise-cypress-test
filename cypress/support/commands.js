@@ -1,3 +1,5 @@
+/** @format */
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -7,6 +9,9 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
+Cypress.Commands.add("navigateTo_Automationexercise_Homepage", () => {
+  cy.visit("/").window("be.visible");
+});
 //
 //
 // -- This is a parent command --

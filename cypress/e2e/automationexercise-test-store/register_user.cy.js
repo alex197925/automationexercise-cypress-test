@@ -8,7 +8,8 @@ describe.only("Create, Register, Signup new user", () => {
   let password = Math.random() * 10;
 
   beforeEach(() => {
-    cy.visit("https://automationexercise.com/").window("be.visible");
+    // cy.visit("/").window("be.visible");
+    cy.navigateTo_Automationexercise_Homepage();
     cy.get("[href='/login']").click();
     cy.get(".signup-form").contains("New User Signup!").should("be.visible");
   });
