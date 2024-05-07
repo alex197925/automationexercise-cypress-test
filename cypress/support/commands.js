@@ -10,8 +10,15 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 Cypress.Commands.add("navigateTo_Automationexercise_Homepage", () => {
-  cy.visit("/").window("be.visible");
+  cy.visit("https://automationexercise.com/").window("be.visible");
+  cy.get('[href="/login"]').should("contain", "Signup / Login").click();
 });
+
+Cypress.Commands.add("navigateTo_Automationexercise_Loginpage", () => {
+  cy.visit("/" + "/login");
+  cy.get(".signup-form > h2").should("be.visible", "New User Signup!");
+});
+
 //
 //
 // -- This is a parent command --
