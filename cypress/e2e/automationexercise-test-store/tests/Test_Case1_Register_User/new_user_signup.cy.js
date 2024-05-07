@@ -4,6 +4,7 @@
 
 describe("Test: Signup new user email, name...", () => {
   beforeEach(() => {
+    cy.navigateTo_Automationexercise_Homepage();
     cy.navigateTo_Automationexercise_Loginpage();
     cy.user_Name();
     cy.email();
