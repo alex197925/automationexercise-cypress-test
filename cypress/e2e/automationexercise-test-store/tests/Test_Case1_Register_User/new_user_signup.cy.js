@@ -2,33 +2,19 @@
 
 ///  <reference types="Cypress" />
 
-describe("Test Signup new user email, name...", () => {
-  const userName = "Cristoph";
-  const email = `${Date.now()}@gmail.com`;
-  const password = Math.random() * 10;
-
+describe("Test: Signup new user email, name...", () => {
   beforeEach(() => {
     cy.navigateTo_Automationexercise_Loginpage();
-    cy.get('[data-qa="signup-name"]').type(userName);
-    cy.get('[data-qa="signup-email"]').type(email);
-    cy.get('[data-qa="signup-button"]').click({ force: true });
-  });
-  it("Verify that 'ENTER ACCOUNT INFORMATION' is visible", () => {
-    cy.get(".login-form, h2")
-      .contains("Enter Account Information")
-      .should("to.be.visible");
+    cy.user_Name();
+    cy.email();
+    cy.click_Signup_Button();
+    cy.password();
   });
 
-  // ENTER ACCOUNT INFORMATION
-  it("Check and validate checkbox and password", () => {
-    cy.get('[type="radio"]').first().as("option-1");
-    cy.get("@option-1").check().should("be.checked");
-    cy.get('[data-qa="password"]').type(password);
-  });
-
-  it.only("Validate date of birth", () => {
-    cy.get('[data-qa="days"]').select("12");
-    cy.get('[data-qa="months"]').select("June");
-    cy.get('[data-qa="years"]').select("1984");
+  it("Register User", () => {
+    cy.enterAccount_Information_Is_Visible();
+    cy.fillTitle();
+    cy.selectDateOfBirth();
+    cy.Select_Newsletter_Option_Checkboxes();
   });
 });
