@@ -1,7 +1,5 @@
 /** @format */
 
-///  <reference types="Cypress" />
-
 describe("Test: Signup new user email, name...", () => {
   beforeEach(() => {
     cy.navigateTo_Automationexercise_Homepage();
