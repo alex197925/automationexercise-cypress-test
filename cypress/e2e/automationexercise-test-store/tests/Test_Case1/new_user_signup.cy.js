@@ -28,7 +28,8 @@ describe("Test: Signup new user email, name...", () => {
     cy.accountCreated_IsVisible();
     cy.click_ContinueButton();
     cy.userName_IsVisible();
-    cy.click_DeleteAccount_Button();
+    // cy.click_DeleteAccount_Button();
     cy.AccountDeletedIs_visible();
+    // cy.Click_ContinueBtn();
   });
 });

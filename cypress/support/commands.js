@@ -22,8 +22,8 @@ Cypress.Commands.add("navigateTo_Automationexercise_Loginpage", () => {
 });
 
 Cypress.Commands.add("password", () => {
-  const password = Math.random() * 10;
-  cy.get('[data-qa="password"]').type(password);
+  // const password = Math.random() * 10;
+  cy.get('[data-qa="password"]').type("thisisvalidpassword");
 });
 
 Cypress.Commands.add("user_Name", () => {
@@ -32,8 +32,8 @@ Cypress.Commands.add("user_Name", () => {
 });
 
 Cypress.Commands.add("email", () => {
-  const email = `${Date.now()}@gmail.com`;
-  cy.get('[data-qa="signup-email"]').type(email);
+  // const email = `${Date.now()}@gmail.com`;
+  cy.get('[data-qa="signup-email"]').type("thisisvalideemail@gmail.com");
 });
 
 Cypress.Commands.add("click_Signup_Button", () => {
@@ -127,6 +127,10 @@ Cypress.Commands.add("AccountDeletedIs_visible", () => {
   cy.get('[data-qa="account-deleted"]')
     .contains("Account Deleted!")
     .should("be.visible");
+});
+
+Cypress.Commands.add("Click_ContinueBtn", () => {
+  cy.get('[data-qa="continue-button"]').click();
 });
 
 //
