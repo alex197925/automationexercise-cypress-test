@@ -63,6 +63,72 @@ Cypress.Commands.add("Select_Newsletter_Option_Checkboxes", () => {
   cy.get("@receive_offer").check().should("be.checked");
 });
 
+Cypress.Commands.add("fillName", () => {
+  cy.get('[data-qa="first_name"]').type("Cristoph");
+});
+
+Cypress.Commands.add("fill_LastName", () => {
+  cy.get('[data-qa="last_name"]').type("Smith");
+});
+
+Cypress.Commands.add("fill_CompanyName", () => {
+  cy.get('[data-qa="company"]').type("Google");
+});
+
+Cypress.Commands.add("fill_Address", () => {
+  cy.get('[data-qa="address"]').type(
+    "1600 Amphitheatre Parkway Mountain View, CA 94043"
+  );
+});
+
+Cypress.Commands.add("select_Country", () => {
+  cy.get('[data-qa="country"]').select("United States");
+});
+
+Cypress.Commands.add("fill_State", () => {
+  cy.get('[data-qa="state"]').type("California");
+});
+
+Cypress.Commands.add("fill_City", () => {
+  cy.get('[data-qa="city"]').type("San Francisco");
+});
+
+Cypress.Commands.add("fill_ZipCode", () => {
+  cy.get('[data-qa="zipcode"]').type("94016");
+});
+
+Cypress.Commands.add("fill_PhoneNumber", () => {
+  cy.get('[data-qa="mobile_number"]').type("+14155553890");
+});
+
+Cypress.Commands.add("click_Button_CreateAccount", () => {
+  cy.get('[data-qa="create-account"]').click();
+});
+
+Cypress.Commands.add("accountCreated_IsVisible", () => {
+  cy.get('[data-qa="account-created"]')
+    .contains("Account Created!")
+    .should("be.visible");
+});
+
+Cypress.Commands.add("click_ContinueButton", () => {
+  cy.get('[data-qa="continue-button"]').click();
+});
+
+Cypress.Commands.add("userName_IsVisible", () => {
+  cy.get(".fa-user").should("be.visible");
+});
+
+Cypress.Commands.add("click_DeleteAccount_Button", () => {
+  cy.get(".fa-trash-o").click();
+});
+
+Cypress.Commands.add("AccountDeletedIs_visible", () => {
+  cy.get('[data-qa="account-deleted"]')
+    .contains("Account Deleted!")
+    .should("be.visible");
+});
+
 //
 //
 // -- This is a child command --
