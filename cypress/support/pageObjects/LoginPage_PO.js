@@ -1,28 +1,38 @@
 /** @format */
 
 class LoginPage_PO {
+  // property selectors
+  loginForm = ".login-form > h2";
+  emailInputField = '[data-qa="login-email"]';
+  passwordInputField = '[data-qa="login-password"]';
+  loginButton = '[data-qa="login-button"]';
+  loggedUserName = ":nth-child(10) > a";
+  deleteButton = ".shop-menu > .nav > :nth-child(5) > a";
+  accountDeletedMessage = ""; 
+
+
   titleToYourAccountIsVisible() {
-    cy.get(".login-form > h2").should("be.visible");
+    cy.get(this.loginForm).should("be.visible");
   }
 
   emailInput() {
-    cy.get('[data-qa="login-email"]').type("thisisvalideemail@gmail.com");
+    cy.get(this.emailInputField).type("thisisvalideemail@gmail.com");
   }
 
   passwordInput() {
-    cy.get('[data-qa="login-password"]').type("thisisvalidpassword");
+    cy.get(this.passwordInputField).type("thisisvalidpassword");
   }
 
   clickLoginBtn() {
-    cy.get('[data-qa="login-button"]').click();
+    cy.get(this.loginButton).click();
   }
 
   loggedUserNameIsVisible() {
-    cy.get(":nth-child(10) > a").should("be.visible");
+    cy.get(this.loggedUserName).should("be.visible");
   }
 
   clickDeleteBtn() {
-    cy.get(".shop-menu > .nav > :nth-child(5) > a").click();
+    cy.get(this.deleteButton).click();
   }
 
   accountDeleted() {}
